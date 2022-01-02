@@ -1,0 +1,20 @@
+string encode(string src)
+{     
+  
+  string enc;
+  int num=1;
+  char ch= src[0];
+  for(int i=1;i<src.length();i++)
+  {
+      if(src[i]==ch)
+        num++;
+      else
+      {
+          enc= enc + ch + to_string(num);
+          num=1;
+          ch=src[i];
+      }
+  }
+  enc= enc+ ch + to_string(num);
+  return enc;
+} 
